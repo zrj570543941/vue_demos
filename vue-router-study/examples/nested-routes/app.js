@@ -95,5 +95,3 @@ new Vue({
     </div>
   `
 }).$mount('#app')
-
-{ path: '/a', component: A, alias: '/b' }
