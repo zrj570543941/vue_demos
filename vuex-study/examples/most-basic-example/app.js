@@ -1,7 +1,6 @@
-import 'babel-polyfill'
+// import 'babel-polyfill'
 import Vue from 'vue'
 import Vuex from 'vuex'
-// 123
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
@@ -13,18 +12,6 @@ const store = new Vuex.Store({
     decrement: state => state.count--
   }
 })
-
-const App = {
-  template: `
-    <div id="app">
-      <p>{{ count }}</p>
-      <p>
-        <button @click="increment">+</button>
-        <button @click="decrement">-</button>
-      </p>
-    </div>
-  `,
-}
 
 new Vue({
   el: '#app',
@@ -44,6 +31,8 @@ new Vue({
       </div>
     )
   },
+  // 通过mutations间接改store值而不是直接
+  // 改store值
   methods: {
     increment () {
       store.commit('increment')
